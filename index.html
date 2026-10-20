@@ -41,17 +41,24 @@
     <section class="hero">
       <canvas class="hero__contours" aria-hidden="true"></canvas>
       <div class="wrap hero__inner">
-        <img class="hero__mark" src="assets/logo-mark.webp" alt="Logo Ewok" width="280" height="512">
-        <p class="kicker kicker--dark">IoT per il monitoraggio ambientale</p>
-        <h1>Monitoraggio ambientale continuo, dove serve davvero.</h1>
-        <p class="hero__lead">
-          Progettiamo, installiamo e gestiamo reti di stazioni per la misura di polveri sottili, gas e parametri
-          microclimatici. Stazioni autonome, anche a energia solare, e un'unica piattaforma per consultare i dati.
-        </p>
-        <div class="hero__cta">
-          <a href="#rete" class="btn">Scopri la rete</a>
-          <a href="#servizi" class="btn btn--ghost">I nostri servizi</a>
+        <div class="hero__text">
+          <p class="kicker kicker--dark">IoT per il monitoraggio ambientale</p>
+          <h1>Monitoraggio ambientale continuo, dove serve davvero.</h1>
+          <p class="hero__lead">
+            Progettiamo, installiamo e gestiamo reti di stazioni per la misura di polveri sottili, gas e parametri
+            microclimatici. Stazioni autonome, anche a energia solare, e un'unica piattaforma per consultare i dati.
+          </p>
+          <div class="hero__cta">
+            <a href="#rete" class="btn">Scopri la rete</a>
+            <a href="#servizi" class="btn btn--ghost">I nostri servizi</a>
+          </div>
         </div>
+        <figure class="hero__photo">
+          <img src="assets/photos/pannello-sm.webp" srcset="assets/photos/pannello-sm.webp 560w, assets/photos/pannello.webp 750w"
+               sizes="(max-width: 900px) 92vw, 40vw" width="560" height="702" fetchpriority="high"
+               alt="Stazione Ewok v1 con pannello solare, installata su palo in un frutteto">
+          <figcaption><span class="live-dot" aria-hidden="true"></span>Ewok v1 · in funzione</figcaption>
+        </figure>
         <dl class="hero__specs">
           <div><dt>Particolato</dt><dd>PM1 · PM2.5 · PM4 · PM10</dd></div>
           <div><dt>Gas</dt><dd>VOC · NOx</dd></div>
@@ -62,50 +69,58 @@
     </section>
 
     <!-- LA STAZIONE -->
-    <section id="stazione" class="section section--tint">
+    <section id="stazione" class="section section--dark station">
       <div class="wrap">
-        <div class="head">
-          <p class="kicker kicker--dark">La stazione</p>
-          <h2>Ewok v1, già sul campo</h2>
-          <p class="head__lead">La prima versione della stazione è installata e trasmette i dati in modo continuo, alimentata solo dal sole.</p>
+        <div class="station__grid">
+          <div class="station__photo">
+            <img src="assets/photos/stazione-sm.webp" srcset="assets/photos/stazione-sm.webp 560w, assets/photos/stazione.webp 840w"
+                 sizes="(max-width: 900px) 92vw, 46vw" width="560" height="700" loading="lazy" decoding="async"
+                 alt="Stazione Ewok v1: pannello solare, supporto stampato in 3D, elettronica e schermo dei sensori su palo">
+            <button type="button" class="spot" data-spot="1" style="left:44%;top:34%" aria-label="1, pannello solare">1</button>
+            <button type="button" class="spot" data-spot="2" style="left:76%;top:28%" aria-label="2, supporto stampato in 3D">2</button>
+            <button type="button" class="spot" data-spot="3" style="left:60%;top:42%" aria-label="3, elettronica e batteria">3</button>
+            <button type="button" class="spot" data-spot="4" style="left:57%;top:55%" aria-label="4, schermo dei sensori">4</button>
+            <button type="button" class="spot" data-spot="5" style="left:70%;top:76%" aria-label="5, palo">5</button>
+            <span class="station__tag">Ewok v1</span>
+          </div>
+          <div class="station__body">
+            <p class="kicker">La stazione</p>
+            <h2>Ewok v1, già sul campo</h2>
+            <p class="head__lead">La prima versione è installata all'aperto e trasmette dati ogni giorno, alimentata solo dal sole. Ogni parte è progettata da noi.</p>
+            <ol class="parts">
+              <li data-spot="1"><span class="parts__n">1</span><div><h3>Pannello solare</h3><p>Ricarica la batteria durante il giorno: nessun allaccio elettrico.</p></div></li>
+              <li data-spot="2"><span class="parts__n">2</span><div><h3>Supporto stampato in 3D</h3><p>Leggero e robusto, regola l'inclinazione del pannello e si fissa al palo con fascette.</p></div></li>
+              <li data-spot="3"><span class="parts__n">3</span><div><h3>Elettronica e batteria</h3><p>Scheda di controllo e accumulo in un contenitore chiuso, al riparo da pioggia e sole.</p></div></li>
+              <li data-spot="4"><span class="parts__n">4</span><div><h3>Schermo dei sensori</h3><p>Le lamelle ventilate proteggono i sensori dal sole diretto: misure dell'aria, non del calore del contenitore.</p></div></li>
+              <li data-spot="5"><span class="parts__n">5</span><div><h3>Installazione su palo</h3><p>Si monta in pochi minuti, senza opere murarie.</p></div></li>
+            </ol>
+          </div>
         </div>
-        <div class="gallery">
-          <figure class="shot">
-            <a href="assets/photos/stazione-fronte.webp" target="_blank" rel="noopener">
-              <img src="assets/photos/stazione-fronte-sm.webp" srcset="assets/photos/stazione-fronte-sm.webp 520w, assets/photos/stazione-fronte.webp 960w"
-                   sizes="(max-width: 700px) 50vw, 25vw" width="520" height="693" loading="lazy" decoding="async" alt="Stazione Ewok v1 con pannello solare e schermo dei sensori, montata su palo in un frutteto">
-            </a>
-            <figcaption>Pannello solare, elettronica e schermo dei sensori</figcaption>
+        <div class="mosaic">
+          <figure class="mosaic__item mosaic__item--wide">
+            <button type="button" class="zoom" data-full="assets/photos/campo.webp" aria-label="Ingrandisci: Nel suo ambiente: un frutteto, lontano da fonti di calore">
+              <img src="assets/photos/campo-sm.webp" width="560" height="498" loading="lazy" decoding="async" alt="La stazione Ewok v1 tra gli alberi di un frutteto">
+            </button>
+            <figcaption>Nel suo ambiente: un frutteto, lontano da fonti di calore</figcaption>
           </figure>
-          <figure class="shot">
-            <a href="assets/photos/stazione-pannello.webp" target="_blank" rel="noopener">
-              <img src="assets/photos/stazione-pannello-sm.webp" srcset="assets/photos/stazione-pannello-sm.webp 520w, assets/photos/stazione-pannello.webp 960w"
-                   sizes="(max-width: 700px) 50vw, 25vw" width="520" height="693" loading="lazy" decoding="async" alt="Pannello solare della stazione Ewok v1 orientato verso il sole">
-            </a>
-            <figcaption>Alimentazione solare, nessun allaccio elettrico</figcaption>
+          <figure class="mosaic__item ">
+            <button type="button" class="zoom" data-full="assets/photos/retro.webp" aria-label="Ingrandisci: Il supporto, progettato e stampato in 3D">
+              <img src="assets/photos/retro-sm.webp" width="560" height="700" loading="lazy" decoding="async" alt="Retro della stazione con il supporto bianco stampato in 3D fissato al palo">
+            </button>
+            <figcaption>Il supporto, progettato e stampato in 3D</figcaption>
           </figure>
-          <figure class="shot">
-            <a href="assets/photos/stazione-retro.webp" target="_blank" rel="noopener">
-              <img src="assets/photos/stazione-retro-sm.webp" srcset="assets/photos/stazione-retro-sm.webp 520w, assets/photos/stazione-retro.webp 960w"
-                   sizes="(max-width: 700px) 50vw, 25vw" width="520" height="693" loading="lazy" decoding="async" alt="Retro della stazione Ewok v1 con il supporto bianco stampato in 3D">
-            </a>
-            <figcaption>Supporto progettato e stampato in 3D</figcaption>
-          </figure>
-          <figure class="shot">
-            <a href="assets/photos/stazione-campo.webp" target="_blank" rel="noopener">
-              <img src="assets/photos/stazione-campo-sm.webp" srcset="assets/photos/stazione-campo-sm.webp 520w, assets/photos/stazione-campo.webp 960w"
-                   sizes="(max-width: 700px) 50vw, 25vw" width="520" height="693" loading="lazy" decoding="async" alt="Stazione Ewok v1 installata tra gli alberi di un frutteto">
-            </a>
-            <figcaption>Installazione su palo, in pochi minuti</figcaption>
+          <figure class="mosaic__item ">
+            <button type="button" class="zoom" data-full="assets/photos/pannello.webp" aria-label="Ingrandisci: Orientata per la massima resa del pannello">
+              <img src="assets/photos/pannello-sm.webp" width="560" height="702" loading="lazy" decoding="async" alt="Pannello solare della stazione orientato verso il sole">
+            </button>
+            <figcaption>Orientata per la massima resa del pannello</figcaption>
           </figure>
         </div>
-        <ul class="station-facts">
-          <li><strong>Autonoma</strong><span>Pannello solare e batteria</span></li>
-          <li><strong>Compatta</strong><span>Montaggio su palo con fascette</span></li>
-          <li><strong>Protetta</strong><span>Sensori in uno schermo a lamelle ventilato</span></li>
-          <li><strong>Connessa</strong><span>Dati inviati in continuo alla piattaforma</span></li>
-        </ul>
       </div>
+      <dialog class="lightbox" aria-label="Foto ingrandita">
+        <form method="dialog"><button class="lightbox__close" aria-label="Chiudi">×</button></form>
+        <img alt="">
+      </dialog>
     </section>
 
     <!-- COSA MISURIAMO -->
