@@ -53,6 +53,49 @@ drawContours();
 let resizeT;
 window.addEventListener('resize', () => { clearTimeout(resizeT); resizeT = setTimeout(drawContours, 150); });
 
+/* ---------- La stazione: punti numerati e visualizzatore foto ---------- */
+function highlightPart (n) {
+  document.querySelectorAll('[data-spot]').forEach(el => el.classList.toggle('is-on', n !== null && el.dataset.spot === n));
+}
+document.querySelectorAll('.spot, .parts li').forEach(el => {
+  el.addEventListener('mouseenter', () => highlightPart(el.dataset.spot));
+  el.addEventListener('mouseleave', () => highlightPart(null));
+  el.addEventListener('focus', () => highlightPart(el.dataset.spot));
+  el.addEventListener('blur', () => highlightPart(null));
+});
+// su touch: il tocco su un punto evidenzia la voce e la porta in vista se e' fuori schermo
+document.querySelectorAll('.spot').forEach(btn => btn.addEventListener('click', () => {
+  highlightPart(btn.dataset.spot);
+  const item = document.querySelector(`.parts li[data-spot="${btn.dataset.spot}"]`);
+  const r = item && item.getBoundingClientRect();
+  if (r && (r.top < 80 || r.bottom > window.innerHeight)) item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}));
+
+const lightbox = document.querySelector('.lightbox');
+if (lightbox && typeof lightbox.showModal === 'function') {
+  const big = lightbox.querySelector('img');
+  document.querySelectorAll('.zoom').forEach(btn => btn.addEventListener('click', () => {
+    const img = btn.querySelector('img');
+    big.src = btn.dataset.full;
+    big.alt = img ? img.alt : '';
+    lightbox.showModal();
+  }));
+  // clic sullo sfondo scuro = chiudi
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.close(); });
+} else {
+  // browser senza <dialog>: la foto grande si apre in una nuova scheda
+  document.querySelectorAll('.zoom').forEach(btn => btn.addEventListener('click', () => window.open(btn.dataset.full, '_blank', 'noopener')));
+}
+
+/* ---------- Dati e AI: il grafico si disegna quando entra nello schermo ---------- */
+const aiSection = document.getElementById('ai');
+if (aiSection && 'IntersectionObserver' in window) {
+  const aiObs = new IntersectionObserver(entries => {
+    if (entries.some(e => e.isIntersecting)) { aiSection.classList.add('is-visible'); aiObs.disconnect(); }
+  }, { threshold: 0.35 });
+  aiObs.observe(aiSection);
+}
+
 /* ---------- Aree e mappa ---------- */
 const dataPromise = fetch(AREAS_URL, { cache: 'no-cache' })
   .then(r => (r.ok ? r.json() : {}))

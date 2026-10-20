@@ -25,8 +25,10 @@
         <span class="logo__text"><strong>EWOK</strong><small>IoT &amp; Software Solutions</small></span>
       </a>
       <nav class="nav__links" aria-label="Sezioni">
+        <a href="#stazione">La stazione</a>
         <a href="#misure">Cosa misuriamo</a>
         <a href="#sensori">Sensori</a>
+        <a href="#ai">Dati e AI</a>
         <a href="#come">Come funziona</a>
                 <a href="#servizi">Servizi</a>
         <a href="#team">Chi siamo</a>
@@ -58,6 +60,59 @@
           <div><dt>Alimentazione</dt><dd>Solare o rete</dd></div>
         </dl>
       </div>
+    </section>
+
+    <!-- LA STAZIONE -->
+    <section id="stazione" class="section section--dark station">
+      <div class="wrap">
+        <div class="station__grid">
+          <div class="station__photo">
+            <img src="assets/photos/stazione-sm.webp" srcset="assets/photos/stazione-sm.webp 560w, assets/photos/stazione.webp 840w"
+                 sizes="(max-width: 900px) 92vw, 46vw" width="560" height="700" loading="lazy" decoding="async"
+                 alt="Stazione Ewok v1: pannello solare, supporto stampato in 3D, elettronica e schermo dei sensori">
+            <button type="button" class="spot" data-spot="1" style="left:44%;top:34%" aria-label="1, pannello solare">1</button>
+            <button type="button" class="spot" data-spot="2" style="left:76%;top:28%" aria-label="2, supporto stampato in 3D">2</button>
+            <button type="button" class="spot" data-spot="3" style="left:60%;top:42%" aria-label="3, elettronica e batteria">3</button>
+            <button type="button" class="spot" data-spot="4" style="left:57%;top:55%" aria-label="4, schermo dei sensori">4</button>
+            <span class="station__tag">Ewok v1</span>
+          </div>
+          <div class="station__body">
+            <p class="kicker">La stazione</p>
+            <h2>Ewok v1, già sul campo</h2>
+            <p class="head__lead">La prima versione è installata all'aperto e trasmette dati ogni giorno, alimentata solo dal sole. Ogni parte è progettata da noi.</p>
+            <ol class="parts">
+              <li data-spot="1"><span class="parts__n">1</span><div><h3>Pannello solare</h3><p>Energia dal sole, senza allaccio elettrico.</p></div></li>
+              <li data-spot="2"><span class="parts__n">2</span><div><h3>Supporto su misura</h3><p>Progettato da noi e stampato in 3D, si adatta al punto di installazione.</p></div></li>
+              <li data-spot="3"><span class="parts__n">3</span><div><h3>Elettronica e batteria</h3><p>Protette in un contenitore chiuso.</p></div></li>
+              <li data-spot="4"><span class="parts__n">4</span><div><h3>Schermo dei sensori</h3><p>Ripara i sensori dal sole diretto, per misure affidabili.</p></div></li>
+            </ol>
+          </div>
+        </div>
+        <div class="mosaic">
+          <figure class="mosaic__item">
+            <button type="button" class="zoom" data-full="assets/photos/campo.webp" aria-label="Ingrandisci: Installata all'aperto, lontano da fonti di calore">
+              <img src="assets/photos/campo-sm.webp" width="560" height="700" loading="lazy" decoding="async" alt="La stazione Ewok v1 installata all'aperto tra gli alberi">
+            </button>
+            <figcaption>Installata all'aperto, lontano da fonti di calore</figcaption>
+          </figure>
+          <figure class="mosaic__item ">
+            <button type="button" class="zoom" data-full="assets/photos/retro.webp" aria-label="Ingrandisci: Il supporto, progettato e stampato in 3D">
+              <img src="assets/photos/retro-sm.webp" width="560" height="700" loading="lazy" decoding="async" alt="Retro della stazione con il supporto bianco stampato in 3D">
+            </button>
+            <figcaption>Il supporto, progettato e stampato in 3D</figcaption>
+          </figure>
+          <figure class="mosaic__item ">
+            <button type="button" class="zoom" data-full="assets/photos/pannello.webp" aria-label="Ingrandisci: Orientata per la massima resa del pannello">
+              <img src="assets/photos/pannello-sm.webp" width="560" height="702" loading="lazy" decoding="async" alt="Pannello solare della stazione orientato verso il sole">
+            </button>
+            <figcaption>Orientata per la massima resa del pannello</figcaption>
+          </figure>
+        </div>
+      </div>
+      <dialog class="lightbox" aria-label="Foto ingrandita">
+        <form method="dialog"><button class="lightbox__close" aria-label="Chiudi">×</button></form>
+        <img alt="">
+      </dialog>
     </section>
 
     <!-- COSA MISURIAMO -->
@@ -126,6 +181,40 @@
       </div>
     </section>
 
+    <!-- DATI E AI -->
+    <section id="ai" class="section section--dark ai">
+      <div class="wrap ai__grid">
+        <div class="ai__body">
+          <p class="kicker">Dati e intelligenza artificiale</p>
+          <h2>Ogni misura diventa conoscenza</h2>
+          <p class="head__lead">Le stazioni raccolgono dati in continuo e la piattaforma li archivia in modo ordinato e completo: una base solida per l'analisi con l'intelligenza artificiale.</p>
+          <ul class="ai__list">
+            <li><h3>Rilevamento delle anomalie</h3><p>Picchi e comportamenti insoliti individuati automaticamente, prima che diventino un problema.</p></li>
+            <li><h3>Previsioni</h3><p>Andamenti attesi della qualità dell'aria a partire dallo storico e dalle condizioni meteo.</p></li>
+            <li><h3>Correlazioni tra siti</h3><p>Confronto tra aree diverse per capire cause, fonti e tendenze nel tempo.</p></li>
+          </ul>
+          <p class="note note--dark"><span class="soon">In sviluppo</span> Modelli di analisi AI sui dati raccolti dalla rete Ewok.</p>
+        </div>
+        <figure class="ai__chart">
+          <figcaption class="ai__chart-head"><span>PM2.5 · <span class="unit">µg/m³</span></span><span class="ai__legend"><i class="lg lg--data"></i>misure <i class="lg lg--fc"></i>previsione</span></figcaption>
+          <svg viewBox="0 0 600 220" role="img" aria-label="Grafico illustrativo: andamento del PM2.5 con un picco anomalo evidenziato e una previsione tratteggiata">
+            <g class="ai__grid-lines"><line x1="24" y1="196" x2="576" y2="196"/><line x1="24" y1="142" x2="576" y2="142"/><line x1="24" y1="88" x2="576" y2="88"/><line x1="24" y1="34" x2="576" y2="34"/></g>
+            <line class="ai__now" x1="482" y1="24" x2="482" y2="196"/>
+            <text class="ai__label" x="488" y="36">ora</text>
+            <path class="ai__area" d="M24.0,131.1 L35.7,125.9 L47.5,113.8 L59.2,115.5 L71.0,107.1 L82.7,108.0 L94.5,112.2 L106.2,108.9 L118.0,116.7 L129.7,114.3 L141.4,119.8 L153.2,119.6 L164.9,114.5 L176.7,107.4 L188.4,112.4 L200.2,108.3 L211.9,101.5 L223.7,97.1 L235.4,102.5 L247.1,107.9 L258.9,106.4 L270.6,123.5 L282.4,121.4 L294.1,134.9 L305.9,142.7 L317.6,147.5 L329.4,148.0 L341.1,143.1 L352.9,149.8 L364.6,143.6 L376.3,141.2 L388.1,80.9 L399.8,140.8 L411.6,147.5 L423.3,150.0 L435.1,151.8 L446.8,150.3 L458.6,156.8 L470.3,160.6 L482.0,158.3 L482.0,196 L24.0,196 Z"/>
+            <path class="ai__band" d="M482.0,153.5 L493.8,149.0 L505.5,144.1 L517.3,138.9 L529.0,133.4 L540.8,127.7 L552.5,121.9 L564.3,115.9 L576.0,109.9 L576.0,165.3 L564.3,165.6 L552.5,165.8 L540.8,166.0 L529.0,165.9 L517.3,165.7 L505.5,165.1 L493.8,164.3 L482.0,163.1 Z"/>
+            <path class="ai__line" d="M24.0,131.1 L35.7,125.9 L47.5,113.8 L59.2,115.5 L71.0,107.1 L82.7,108.0 L94.5,112.2 L106.2,108.9 L118.0,116.7 L129.7,114.3 L141.4,119.8 L153.2,119.6 L164.9,114.5 L176.7,107.4 L188.4,112.4 L200.2,108.3 L211.9,101.5 L223.7,97.1 L235.4,102.5 L247.1,107.9 L258.9,106.4 L270.6,123.5 L282.4,121.4 L294.1,134.9 L305.9,142.7 L317.6,147.5 L329.4,148.0 L341.1,143.1 L352.9,149.8 L364.6,143.6 L376.3,141.2 L388.1,80.9 L399.8,140.8 L411.6,147.5 L423.3,150.0 L435.1,151.8 L446.8,150.3 L458.6,156.8 L470.3,160.6 L482.0,158.3"/>
+            <path class="ai__fc" d="M482.0,158.3 L493.8,156.6 L505.5,154.6 L517.3,152.3 L529.0,149.7 L540.8,146.9 L552.5,143.9 L564.3,140.8 L576.0,137.6"/>
+            <circle class="ai__anom-ring" cx="388.1" cy="80.9" r="14"/>
+            <circle class="ai__anom" cx="388.1" cy="80.9" r="5"/>
+            <text class="ai__label ai__label--anom" x="300" y="62">anomalia rilevata</text>
+            <circle class="ai__end" cx="482" cy="158.3" r="4.5"/>
+          </svg>
+          <p class="ai__note">Esempio illustrativo</p>
+        </figure>
+      </div>
+    </section>
+
     <!-- COME FUNZIONA -->
     <section id="come" class="section">
       <div class="wrap">
@@ -137,7 +226,7 @@
           <li>
             <span class="steps__n">01</span>
             <h3>Installiamo la stazione</h3>
-            <p>Sopralluogo e posa su palo, parete o copertura. La messa in servizio avviene sul posto, senza opere aggiuntive.</p>
+            <p>Sopralluogo e installazione nel punto più adatto. La messa in servizio avviene sul posto.</p>
           </li>
           <li>
             <span class="steps__n">02</span>
@@ -198,7 +287,7 @@
         <ul class="services">
           <li><span class="services__n">01</span><h3>Progettazione della rete</h3><p>Analisi delle esigenze e scelta dei punti di misura più rappresentativi.</p></li>
           <li><span class="services__n">02</span><h3>Fornitura e installazione</h3><p>Stazioni assemblate e collaudate, posa in opera e messa in servizio sul campo.</p></li>
-          <li><span class="services__n">03</span><h3>Piattaforma dati</h3><p>Consultazione in tempo reale, storico, soglie di allarme ed esportazione dei dati.</p></li>
+          <li><span class="services__n">03</span><h3>Piattaforma dati</h3><p>Consultazione in tempo reale, storico, soglie di allarme ed esportazione dei dati, pronti per l'analisi con l'AI.</p></li>
           <li><span class="services__n">04</span><h3>Assistenza e manutenzione</h3><p>Monitoraggio dello stato delle stazioni, interventi programmati e aggiornamenti da remoto.</p></li>
           <li><span class="services__n">05</span><h3>Soluzioni su misura <span class="soon">Coming soon</span></h3><p>Stazioni configurate su richiesta e software dedicati per esigenze specifiche.</p></li>
           <li><span class="services__n">06</span><h3>Ricerca e sviluppo</h3><p>In sviluppo una stazione solare a bassissimo consumo e la connettività su rete cellulare.</p></li>
