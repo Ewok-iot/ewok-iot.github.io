@@ -87,6 +87,15 @@ if (lightbox && typeof lightbox.showModal === 'function') {
   document.querySelectorAll('.zoom').forEach(btn => btn.addEventListener('click', () => window.open(btn.dataset.full, '_blank', 'noopener')));
 }
 
+/* ---------- Dati e AI: il grafico si disegna quando entra nello schermo ---------- */
+const aiSection = document.getElementById('ai');
+if (aiSection && 'IntersectionObserver' in window) {
+  const aiObs = new IntersectionObserver(entries => {
+    if (entries.some(e => e.isIntersecting)) { aiSection.classList.add('is-visible'); aiObs.disconnect(); }
+  }, { threshold: 0.35 });
+  aiObs.observe(aiSection);
+}
+
 /* ---------- Aree e mappa ---------- */
 const dataPromise = fetch(AREAS_URL, { cache: 'no-cache' })
   .then(r => (r.ok ? r.json() : {}))
